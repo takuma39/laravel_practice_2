@@ -35,6 +35,66 @@ class OwnerSeeder extends Seeder
                 'password' => Hash::make('password123'),
                 'created_at' => '2021/01/01 11:11:11'
             ],
+            [
+                'name' => 'test4',
+                'email' => 'test4@test',
+                'password' => Hash::make('password123'),
+                'created_at' => '2021/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test5',
+                'email' => 'test5@test',
+                'password' => Hash::make('password123'),
+                'created_at' => '2021/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test6',
+                'email' => 'test6@test',
+                'password' => Hash::make('password123'),
+                'created_at' => '2021/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test7',
+                'email' => 'test7@test',
+                'password' => Hash::make('password123'),
+                'created_at' => '2021/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test8',
+                'email' => 'test8@test',
+                'password' => Hash::make('password123'),
+                'created_at' => '2021/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test9',
+                'email' => 'test9@test',
+                'password' => Hash::make('password123'),
+                'created_at' => '2021/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test10',
+                'email' => 'test10@test',
+                'password' => Hash::make('password123'),
+                'created_at' => '2021/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test11',
+                'email' => 'test11@test',
+                'password' => Hash::make('password123'),
+                'created_at' => '2021/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test12',
+                'email' => 'test12@test',
+                'password' => Hash::make('password123'),
+                'created_at' => '2021/01/01 11:11:11'
+            ],
+            [
+                'name' => 'test13',
+                'email' => 'test13@test',
+                'password' => Hash::make('password123'),
+                'created_at' => '2021/01/01 11:11:11'
+            ],
         ]);
     }
 }
