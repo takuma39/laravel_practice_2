@@ -5,11 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Owner; //Eloquent
+use App\Models\Shop; //Eloquent
 use Illuminate\Support\Facades\DB; //QueryBuilder
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
+use Throwable;
+
 
 class OwnersController extends Controller
 {
@@ -27,23 +31,9 @@ class OwnersController extends Controller
     public function index()
     {
         //
-        // $data_now = Carbon::now();
-        // $data_parse = Carbon::parse(now());
-        // echo $data_now->year;
-        // echo '<br>';
-        // echo $data_parse;
-
-
-        // $e_all = Owner::all();
-        // $q_get = DB::table('owners')->select('name', 'created_at')->get();
-        // $q_first = DB::table('owners')->select('name')->first();
-        // $c_test = collect([
-        //     'name' => 'test'
-        // ]);
-        // dd($e_all, $q_get, $q_first, $c_test);
 
         $owners = Owner::select('id', 'name', 'email', 'created_at')
-            ->paginate(3);
+            ->paginate(10);
         return view('admin.owners.index', compact('owners'));
     }
 
@@ -73,11 +63,28 @@ class OwnersController extends Controller
             'password' => 'required|string|confirmed|min:8',
         ]);
 
-        owner::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        try {
+            DB::transaction(function () use ($request) {
+                $owner = owner::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                ]);
+
+                Shop::create([
+                    'owner_id' => $owner->id,
+                    'name' => '店名',
+                    'information' => '',
+                    'filename' => '',
+                    'is_selling' => true
+                ]);
+            }, 2);
+        } catch (Throwable $e) {
+            Log::error($e);
+            throw $e;
+        }
+
+
 
         return redirect()
             ->route('admin.owners.index')
