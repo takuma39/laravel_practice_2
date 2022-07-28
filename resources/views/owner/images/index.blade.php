@@ -14,18 +14,20 @@
                         <button onclick="location.href='{{ route('owner.images.create') }}'"
                             class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規作成</button>
                     </div>
-                    @foreach ($images as $image)
-                        <div class="w-1/4">
-                            <a href="{{ route('owner.images.edit', ['image' => $image->id]) }}">
-                                <div class="border rounded-md p-4">
-                                    <p class="text-xl">
-                                        {{ $image->title }}
-                                    </p>
-                                    <x-thumbnail :filename="$image->filename" type="product" />
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
+                    <div class="flex flex-wrap justify-around">
+                        @foreach ($images as $image)
+                            <div class="w-1/4 p-2">
+                                <a href="{{ route('owner.images.edit', ['image' => $image->id]) }}">
+                                    <div class="border rounded-md p-4">
+                                        <p class="text-xl">
+                                            {{ $image->title }}a
+                                        </p>
+                                        <x-thumbnail :filename="$image->filename" type="products" />
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
                     {{ $images->links() }}
                 </div>
             </div>
