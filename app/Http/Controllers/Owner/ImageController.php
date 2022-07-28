@@ -37,7 +37,7 @@ class ImageController extends Controller
         $ownerId = Auth::id();
         $images = Image::where('owner_id', $ownerId)
             ->orderBy('updated_at', 'desc')
-            ->paginate(20);
+            ->paginate(10);
 
         return view('owner.images.index', compact('images'));
     }
@@ -83,17 +83,6 @@ class ImageController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -102,6 +91,8 @@ class ImageController extends Controller
     public function edit($id)
     {
         //
+        $image = Image::findOrFail($id);
+        return view('owner.images.edit', compact('image'));
     }
 
     /**
@@ -114,6 +105,20 @@ class ImageController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'title' => 'string|max:50',
+        ]);
+
+        $image = Image::findOrFail($id);
+        $image->title =  $request->title;
+        $image->save();
+
+        return redirect()
+            ->route('owner.images.index')
+            ->with([
+                'message' => '画像情報を修正しました。',
+                'status' => 'info'
+            ]);
     }
 
     /**
