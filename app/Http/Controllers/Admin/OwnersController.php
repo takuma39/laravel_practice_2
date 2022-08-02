@@ -65,7 +65,7 @@ class OwnersController extends Controller
 
         try {
             DB::transaction(function () use ($request) {
-                $owner = owner::create([
+                $owner = Owner::create([
                     'name' => $request->name,
                     'email' => $request->email,
                     'password' => Hash::make($request->password),
