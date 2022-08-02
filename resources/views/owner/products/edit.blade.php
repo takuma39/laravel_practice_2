@@ -10,8 +10,10 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                    <x-flash-message status="session('status')" />
                     <form method="post" action="{{ route('owner.products.update', ['product' => $product->id]) }}">
                         @csrf
+                        @method('put')
                         <div class="p-2 w-1/2 mx-auto">
                             <div class="relative">
                                 <label for="name" class="leading-7 text-sm text-gray-600">商品名 ※必須</label>
