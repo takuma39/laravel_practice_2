@@ -20,35 +20,35 @@ class ShopSeeder extends Seeder
                 'owner_id' => 1,
                 'name' => 'test1SHOP',
                 'information' => 'お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/',
-                'filename' => '',
+                'filename' => 'sample1.png',
                 'is_selling' => true
             ],
             [
                 'owner_id' => 2,
                 'name' => 'test2SHOP',
                 'information' => 'お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/',
-                'filename' => '',
+                'filename' => 'sample2.png',
                 'is_selling' => true
             ],
             [
                 'owner_id' => 3,
                 'name' => 'test3SHOP',
                 'information' => 'お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/',
-                'filename' => '',
+                'filename' => 'sample3.png',
                 'is_selling' => true
             ],
             [
                 'owner_id' => 4,
                 'name' => 'test4SHOP',
                 'information' => 'お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/',
-                'filename' => '',
+                'filename' => 'sample4.png',
                 'is_selling' => true
             ],
             [
                 'owner_id' => 5,
                 'name' => 'test5SHOP',
                 'information' => 'お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/お店の情報が入る/',
-                'filename' => '',
+                'filename' => 'sample5.png',
                 'is_selling' => true
             ],
         ]);

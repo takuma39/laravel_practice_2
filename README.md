@@ -1,17 +1,21 @@
-## udemy Laravel講座
+## udemy Laravel 講座
 
 ## インストール方法
 
 ## インストール後の実施事項
 
 画像のダミーデータは
-public/imagesフォルダ内に
-sample.png〜sample10.pngとして
+public/images フォルダ内に
+sample.png〜sample10.png として
 保存しています。
 
-php artisan storage:linkで
-storageフォルダにリンク後、
+php artisan storage:link で
+storage フォルダにリンク後、
 
-storage/app/public/productsフォルダ内に
+storage/app/public/products フォルダ内に
 保存すると表示されます。
-（productフォルダがない場合は作成してください。）
+(products フォルダがない場合は作成してください。)
+
+ショップの画像も表示する場合は、
+storage/app/public/shops フォルダを作成し
+画像を保存してください。
