@@ -99,12 +99,12 @@
     <script>
         const select = document.getElementById('sort')
         select.addEventListener('change', function() {
-            this.form.submit()
-        })
+            this.form.submit();
+        });
 
         const paginate = document.getElementById('pagination')
         paginate.addEventListener('change', function() {
-            this.form.submit()
-        })
+            this.form.submit();
+        });
     </script>
 </x-app-layout>
